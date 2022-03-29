@@ -5,7 +5,7 @@ from .config import settings
 import psycopg2
 from psycopg2.extras import RealDictCursor
 from datetime import time
-
+ 
 # SQLALCHEMY_DATABASE_URL = "sqlite:///./sql_app.db"
 SQLALCHEMY_DATABASE_URL = f"postgresql://{settings.database_username}:{settings.database_password}@{settings.database_hostname}/{settings.database_name}"
 print(SQLALCHEMY_DATABASE_URL)

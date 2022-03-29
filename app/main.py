@@ -9,7 +9,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 
 
-models.Base.metadata.create_all(bind= engine)
+# models.Base.metadata.create_all(bind= engine)
 
 
 
@@ -38,7 +38,8 @@ app.include_router(vote.router)
 @app.get("/")
 async def root():
     return {"Message": "Welcome to my API!",
-            "click here to go to Docs": "/docs"}
+            "click here to go to Docs": "/docs",
+            "ref":"Learnt FastAPI for work"}
 
 
 

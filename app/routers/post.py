@@ -71,7 +71,7 @@ def delete_post(id:int, db: Session= Depends(get_db), current_user: int= Depends
 
 
 @router.get('/', response_model = List[PostOut])
-def get_posts(db: Session = Depends(get_db), limit:int=10, skip:int=0, search: Optional[str]=""):
+def get_posts(db: Session = Depends(get_db), limit:int=10, skip:int=0, search: Optional[str]="", current_user: int= Depends(oauth2.get_current_user)):
     # cursor.execute("""select * from post """)
     # posts = cursor.fetchall()
     # posts =db.query(models.Post).filter(models.Post.title.contains(search)).limit(limit).offset(skip).all()
@@ -82,7 +82,7 @@ def get_posts(db: Session = Depends(get_db), limit:int=10, skip:int=0, search: O
     return posts
 
 @router.get('/{id}', response_model = PostOut)
-def get_post(id:int, db: Session= Depends(get_db)):
+def get_post(id:int, db: Session= Depends(get_db), current_user: int = Depends(oauth2.get_current_user)):
 
     # cursor.execute('''select * from post where id = %s ''', (str(id),))
     # post= cursor.fetchone()
