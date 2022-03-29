@@ -4,15 +4,17 @@ on: [push,pull_request]
 
 jobs: 
   job1:
+
     runs-on: ubuntu-latest
+    steps:
       - name: pulling git repo
-      -  uses: actions/checkout@v3
+        uses: actions/checkout@v3
       - name: Python installation on our machine
-      -  uses: actions/setup-python@v3
+        uses: actions/setup-python@v3
         with:
           python-version: '3.9'
       - name: Update Pip
-      - run: python -m pip install --upgrade pip
+        run: python -m pip install --upgrade pip
       - name: Install all dependencies from Requirements.txt
-      - run: pip install -r requirements.txt 
+        run: pip install -r requirements.txt 
 
