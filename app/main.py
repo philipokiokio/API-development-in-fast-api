@@ -39,7 +39,7 @@ app.include_router(vote.router)
 async def root():
     return {"Message": "Welcome to my API!",
             "click here to go to Docs": "/docs",
-            "ref":"Learnt FastAPI for work"}
+            "ref":"deployed to heroku via Github Actions"}
 
 
 
